@@ -1,515 +1,449 @@
-<!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정세영 | 건축 설계 포트폴리오</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans KR', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        arch: {
-                            50: '#fcfcfc',
-                            100: '#f5f5f5',
-                            200: '#e5e5e5',
-                            300: '#d4d4d4',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                            accent: '#8c7a6b', /* Muted warm taupe/brown */
-                        }
-                    },
-                    spacing: {
-                        '128': '32rem',
-                        '144': '36rem',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Custom Styles & Animations */
-        body {
-            background-color: #fbfbf9; /* Slightly warm off-white */
-            color: #171717;
-            overflow-x: hidden;
-        }
-
-        /* Scroll Reveal Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-
-        /* Image Hover Effect */
-        .project-card overflow:hidden img {
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .project-card:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Custom Navigation Underline */
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: #171717;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Filter Button Active State */
-        .filter-btn.active {
-            background-color: #171717;
-            color: #fff;
-            border-color: #171717;
-        }
-    </style>
-</head>
-<body class="antialiased font-sans">
-
-    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
-                <!-- Logo -->
-                <a href="#" class="text-2xl font-serif font-semibold tracking-wider text-arch-900">
-                    ARCHI<span class="text-arch-accent">.</span>LAB
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-10">
-                    <a href="#home" class="nav-link text-sm uppercase tracking-widest text-arch-600 hover:text-arch-900">Home</a>
-                    <a href="#projects" class="nav-link text-sm uppercase tracking-widest text-arch-600 hover:text-arch-900">Projects</a>
-                    <a href="#about" class="nav-link text-sm uppercase tracking-widest text-arch-600 hover:text-arch-900">Studio</a>
-                    <a href="#contact" class="nav-link text-sm uppercase tracking-widest text-arch-600 hover:text-arch-900">Contact</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-arch-900 focus:outline-none" id="mobile-menu-btn">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+<div style="height: 6708px; position: relative; background: white">
+  <div style="width: 1920px; left: 100px; top: 100px; position: absolute; background: linear-gradient(0deg, var(--color-grey-98, #FBFBF9) 0%, var(--color-grey-98, #FBFBF9) 100%), var(--color-white-solid, white); flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+    <div style="align-self: stretch; min-height: 1200px; padding-top: 168px; padding-bottom: 72px; padding-left: 320px; padding-right: 320px; justify-content: flex-start; align-items: center; display: inline-flex">
+      <div style="flex: 1 1 0; max-width: 1280px; padding-left: 32px; padding-right: 32px; justify-content: flex-start; align-items: center; gap: 48px; display: flex">
+        <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-orange-48, #8C7A6B); font-size: 14px; font-family: Inter; font-weight: 500; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Architecture & Design Studio</div>
+          </div>
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 72px; font-family: Playfair Display; font-weight: 400; line-height: 72px; word-wrap: break-word">귀여운<br/>명수옹</div>
+          </div>
+          <div style="width: 512px; max-width: 512px; padding-top: 8px; padding-bottom: 24px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 20px; font-family: Noto Sans KR; font-weight: 300; line-height: 28px; word-wrap: break-word">우리는 사람과 환경이 조화롭게 공존하는 지속 가능한 건축을<br/>지향합니다. 혁신적인 디자인으로 새로운 라이프스타일을 제<br/>안합니다.</div>
+          </div>
+          <div style="padding-left: 32px; padding-right: 32px; padding-top: 16px; padding-bottom: 16px; outline: 1px var(--color-grey-9, #171717) solid; outline-offset: -1px; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
+            <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 14px; font-family: Inter; font-weight: 500; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">View Selected Works</div>
             </div>
+            <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 14px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 20px; word-wrap: break-word"></div>
+            </div>
+          </div>
         </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div class="md:hidden absolute top-24 left-0 w-full bg-white shadow-lg hidden flex-col border-t border-gray-100" id="mobile-menu">
-            <a href="#home" class="px-6 py-4 text-sm uppercase tracking-widest text-arch-600 border-b border-gray-50 mobile-link">Home</a>
-            <a href="#projects" class="px-6 py-4 text-sm uppercase tracking-widest text-arch-600 border-b border-gray-50 mobile-link">Projects</a>
-            <a href="#about" class="px-6 py-4 text-sm uppercase tracking-widest text-arch-600 border-b border-gray-50 mobile-link">Studio</a>
-            <a href="#contact" class="px-6 py-4 text-sm uppercase tracking-widest text-arch-600 mobile-link">Contact</a>
+        <div style="flex: 1 1 0; height: 960px; position: relative; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+          <img style="align-self: stretch; flex: 1 1 0; position: relative; box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25); border-radius: 2px" src="https://placehold.co/584x960" />
+          <div style="width: 256px; padding: 24px; left: -24px; top: 854px; position: absolute; background: var(--color-white-solid, white); outline: 1px var(--color-grey-96, #F3F4F6) solid; outline-offset: -1px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+            <div style="width: 256px; height: 130px; left: 0px; top: 0px; position: absolute; background: var(--color-white--0_2%, rgba(255, 255, 255, 0)); box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)"></div>
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 20px; word-wrap: break-word">Featured Project</div>
+            </div>
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 18px; font-family: Inter; font-weight: 500; line-height: 28px; word-wrap: break-word">The Hillside Residence</div>
+            </div>
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Inter; font-weight: 400; text-transform: uppercase; line-height: 16px; letter-spacing: 0.30px; word-wrap: break-word">Seoul, 2025</div>
+            </div>
+          </div>
         </div>
-    </header>
-
-    <section id="home" class="relative pt-24 min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center gap-12">
-            
-            <!-- Hero Text -->
-            <div class="w-full lg:w-1/2 z-10 reveal pt-12 lg:pt-0">
-                <h2 class="text-arch-accent font-medium tracking-widest uppercase text-sm mb-4">Architecture & Design Studio</h2>
-                <h1 class="text-5xl lg:text-7xl font-serif leading-tight text-arch-900 mb-6">
-                    공간에<br>
-                    가치를 더하다.
-                </h1>
-                <p class="text-arch-500 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
-                    우리는 사람과 환경이 조화롭게 공존하는 지속 가능한 건축을 지향합니다. 혁신적인 디자인으로 새로운 라이프스타일을 제안합니다.
-                </p>
-                <a href="#projects" class="inline-flex items-center gap-3 border border-arch-900 px-8 py-4 text-arch-900 hover:bg-arch-900 hover:text-white transition-colors duration-300">
-                    <span class="uppercase tracking-widest text-sm font-medium">View Selected Works</span>
-                    <i class="fas fa-arrow-right text-sm"></i>
-                </a>
+      </div>
+    </div>
+    <div style="align-self: stretch; padding-left: 320px; padding-right: 320px; padding-top: 96px; padding-bottom: 96px; background: var(--color-white-solid, white); flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+      <div style="width: 100%; max-width: 1280px; padding-left: 32px; padding-right: 32px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 64px; display: flex">
+        <div style="align-self: stretch; justify-content: flex-start; align-items: flex-end; gap: 423.62px; display: inline-flex">
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 36px; font-family: Playfair Display; font-weight: 400; line-height: 40px; word-wrap: break-word">Selected Works</div>
             </div>
-
-            <!-- Hero Image -->
-            <div class="w-full lg:w-1/2 h-[60vh] lg:h-[80vh] relative reveal reveal-delay-2">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-                     alt="Modern Architecture" 
-                     class="w-full h-full object-cover rounded-sm shadow-2xl">
-                <!-- Floating Info Card -->
-                <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl hidden md:block w-64 border border-gray-100">
-                    <p class="text-sm font-serif text-arch-500 italic mb-2">Featured Project</p>
-                    <h3 class="text-lg font-medium text-arch-900">The Hillside Residence</h3>
-                    <p class="text-xs text-arch-400 mt-2 uppercase tracking-wide">Seoul, 2025</p>
-                </div>
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 16px; font-family: Noto Sans KR; font-weight: 300; line-height: 24px; word-wrap: break-word">우리의 철학이 담긴 최근 주요 프로젝트들을 소개합니다.</div>
             </div>
+          </div>
+          <div style="justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex; flex-wrap: wrap; align-content: flex-start">
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; background: #F0BBBB; border-radius: 9999px; outline: 1px var(--color-grey-9, #171717) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">All</div>
+            </div>
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; border-radius: 9999px; outline: 1px var(--color-azure-84, #D1D5DB) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Residential</div>
+            </div>
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; border-radius: 9999px; outline: 1px var(--color-azure-84, #D1D5DB) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Commercial</div>
+            </div>
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; border-radius: 9999px; outline: 1px var(--color-azure-84, #D1D5DB) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Interior</div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <section id="projects" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
-                <div>
-                    <h2 class="text-4xl font-serif text-arch-900 mb-4">Selected Works</h2>
-                    <p class="text-arch-500 font-light">우리의 철학이 담긴 최근 주요 프로젝트들을 소개합니다.</p>
-                </div>
-                
-                <!-- Filters -->
-                <div class="flex flex-wrap gap-3 mt-6 md:mt-0" id="portfolio-filters">
-                    <button class="filter-btn active px-5 py-2 border border-gray-300 rounded-full text-sm font-medium transition-colors duration-300" data-filter="all">All</button>
-                    <button class="filter-btn px-5 py-2 border border-gray-300 rounded-full text-sm font-medium transition-colors text-arch-600 hover:border-arch-900 duration-300" data-filter="residential">Residential</button>
-                    <button class="filter-btn px-5 py-2 border border-gray-300 rounded-full text-sm font-medium transition-colors text-arch-600 hover:border-arch-900 duration-300" data-filter="commercial">Commercial</button>
-                    <button class="filter-btn px-5 py-2 border border-gray-300 rounded-full text-sm font-medium transition-colors text-arch-600 hover:border-arch-900 duration-300" data-filter="interior">Interior</button>
-                </div>
+        <div style="align-self: stretch; height: 1232px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div style="align-self: stretch; padding-bottom: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+            <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+              <div style="align-self: stretch; height: 444px; position: relative; overflow: hidden; background-image: url(https://placehold.co/592x444)">
+                <img style="width: 592px; height: 444px; left: 0px; top: 0px; position: absolute" src="https://placehold.co/592x444" />
+                <div style="width: 97px; height: 88px; left: 495px; top: 110px; position: absolute; background: black"></div>
+              </div>
             </div>
-
-            <!-- Portfolio Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16" id="portfolio-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card group cursor-pointer reveal portfolio-item" data-category="residential">
-                    <div class="overflow-hidden mb-6 bg-gray-100 aspect-[4/3] rounded-sm relative">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="The Riverside House" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="bg-white text-arch-900 px-6 py-3 text-sm tracking-widest uppercase">View Project</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-xl font-medium text-arch-900 mb-1 group-hover:text-arch-accent transition-colors">더 리버사이드 하우스</h3>
-                            <p class="text-arch-500 font-light text-sm">Residential · Gapyeong</p>
-                        </div>
-                        <span class="text-xs font-serif italic text-arch-400">2026</span>
-                    </div>
+            <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+              <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">더 리버사이드 하우스</div>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="project-card group cursor-pointer reveal reveal-delay-1 portfolio-item md:mt-16" data-category="commercial">
-                    <div class="overflow-hidden mb-6 bg-gray-100 aspect-[4/3] rounded-sm relative">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Central Office Tower" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="bg-white text-arch-900 px-6 py-3 text-sm tracking-widest uppercase">View Project</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-xl font-medium text-arch-900 mb-1 group-hover:text-arch-accent transition-colors">센트럴 오피스 타워</h3>
-                            <p class="text-arch-500 font-light text-sm">Commercial · Seoul</p>
-                        </div>
-                        <span class="text-xs font-serif italic text-arch-400">2025</span>
-                    </div>
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Residential · Gapyeong</div>
                 </div>
-
-                <!-- Project 3 -->
-                <div class="project-card group cursor-pointer reveal portfolio-item" data-category="interior">
-                    <div class="overflow-hidden mb-6 bg-gray-100 aspect-[4/3] rounded-sm relative">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Modern Gallery" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="bg-white text-arch-900 px-6 py-3 text-sm tracking-widest uppercase">View Project</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-xl font-medium text-arch-900 mb-1 group-hover:text-arch-accent transition-colors">모던 아트 갤러리</h3>
-                            <p class="text-arch-500 font-light text-sm">Interior · Busan</p>
-                        </div>
-                        <span class="text-xs font-serif italic text-arch-400">2025</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card group cursor-pointer reveal reveal-delay-1 portfolio-item md:mt-16" data-category="residential">
-                    <div class="overflow-hidden mb-6 bg-gray-100 aspect-[4/3] rounded-sm relative">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Forest Villa" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="bg-white text-arch-900 px-6 py-3 text-sm tracking-widest uppercase">View Project</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-xl font-medium text-arch-900 mb-1 group-hover:text-arch-accent transition-colors">포레스트 빌라</h3>
-                            <p class="text-arch-500 font-light text-sm">Residential · Jeju</p>
-                        </div>
-                        <span class="text-xs font-serif italic text-arch-400">2024</span>
-                    </div>
-                </div>
-
+              </div>
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2026</div>
             </div>
-            
-            <!-- Load More -->
-            <div class="text-center mt-20 reveal">
-                <button class="inline-block border-b border-arch-900 text-arch-900 pb-1 font-medium hover:text-arch-accent hover:border-arch-accent transition-colors">
-                    Load More Projects
-                </button>
+          </div>
+          <div style="align-self: stretch; padding-top: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+              <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; height: 444px; position: relative; overflow: hidden">
+                  <img style="width: 642px; height: 481px; left: -36px; top: -37px; position: absolute" src="https://placehold.co/642x481" />
+                </div>
+              </div>
+              <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+                <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">센트럴 오피스 타워</div>
+                  </div>
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Commercial · Seoul</div>
+                  </div>
+                </div>
+                <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2025</div>
+              </div>
             </div>
+          </div>
+          <div style="align-self: stretch; padding-bottom: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+            <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+              <div style="align-self: stretch; height: 444px; position: relative; overflow: hidden">
+                <img style="width: 593px; height: 445px; left: 0px; top: 0px; position: absolute" src="https://placehold.co/593x445" />
+              </div>
+            </div>
+            <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+              <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">모던 아트 갤러리</div>
+                </div>
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Interior · Busan</div>
+                </div>
+              </div>
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2025</div>
+            </div>
+          </div>
+          <div style="align-self: stretch; padding-top: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+              <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; height: 444px; position: relative; overflow: hidden">
+                  <img style="width: 636px; height: 477px; left: 0px; top: -32px; position: absolute" src="https://placehold.co/636x477" />
+                </div>
+              </div>
+              <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+                <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">포레스트 빌라</div>
+                  </div>
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Residential · Jeju</div>
+                  </div>
+                </div>
+                <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2024</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <section id="about" class="py-24 bg-[#fbfbf9]">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                
-                <!-- About Image -->
-                <div class="w-full lg:w-1/2 reveal">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Our Studio" class="w-full aspect-square object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700">
-                        <!-- Decorative Frame -->
-                        <div class="absolute inset-0 border-4 border-arch-900 transform translate-x-4 translate-y-4 -z-10"></div>
-                    </div>
-                </div>
-
-                <!-- About Text -->
-                <div class="w-full lg:w-1/2 reveal reveal-delay-2">
-                    <h2 class="text-4xl font-serif text-arch-900 mb-6">Building the Future,<br>Respecting the Past.</h2>
-                    <p class="text-arch-600 font-light mb-6 leading-relaxed text-lg">
-                        ARCHI.LAB은 2015년에 설립된 건축 설계 및 인테리어 스튜디오입니다. 우리는 건축이 단순한 구조물을 넘어 사람들의 삶과 문화를 담는 그릇이라고 믿습니다.
-                    </p>
-                    <p class="text-arch-600 font-light mb-10 leading-relaxed text-lg">
-                        클라이언트와의 긴밀한 소통을 바탕으로, 주변 환경과 맥락을 깊이 이해하고 기능적이면서도 아름다운 공간을 창조합니다. 지속 가능한 소재와 혁신적인 디자인 솔루션으로 시대를 초월하는 가치를 만들어갑니다.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-8 border-t border-gray-200 pt-8">
-                        <div>
-                            <p class="text-4xl font-serif text-arch-900 mb-2">12+</p>
-                            <p class="text-sm text-arch-500 uppercase tracking-widest">Years Experience</p>
-                        </div>
-                        <div>
-                            <p class="text-4xl font-serif text-arch-900 mb-2">80+</p>
-                            <p class="text-sm text-arch-500 uppercase tracking-widest">Projects Done</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div style="align-self: stretch; padding-top: 16px; flex-direction: column; justify-content: flex-start; align-items: center; display: flex">
+          <div style="padding-bottom: 4px; border-bottom: 1px var(--color-grey-9, #171717) solid; justify-content: center; align-items: center; display: inline-flex">
+            <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Load More Projects</div>
+          </div>
         </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-arch-900 text-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-16">
-                
-                <!-- Contact Info -->
-                <div class="w-full lg:w-5/12 reveal">
-                    <h2 class="text-4xl font-serif mb-6">Let's talk about<br>your next project.</h2>
-                    <p class="text-arch-300 font-light mb-12 leading-relaxed">
-                        새로운 프로젝트에 대한 아이디어가 있으신가요?<br>
-                        ARCHI.LAB과 함께 공간의 새로운 가능성을 발견해 보세요.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-map-marker-alt mt-1 text-arch-accent"></i>
-                            <div>
-                                <h4 class="font-medium mb-1">Studio</h4>
-                                <p class="text-arch-300 font-light text-sm">서울특별시 강남구 테헤란로 123<br>디자인 빌딩 5층</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-envelope mt-1 text-arch-accent"></i>
-                            <div>
-                                <h4 class="font-medium mb-1">Email</h4>
-                                <p class="text-arch-300 font-light text-sm">hello@archilab.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-phone mt-1 text-arch-accent"></i>
-                            <div>
-                                <h4 class="font-medium mb-1">Phone</h4>
-                                <p class="text-arch-300 font-light text-sm">+82 (0)2 1234 5678</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="w-full lg:w-7/12 reveal reveal-delay-2">
-                    <form id="contact-form" class="space-y-6" onsubmit="event.preventDefault(); showMessage();">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-light text-arch-300 mb-2" for="name">Name</label>
-                                <input type="text" id="name" required class="w-full bg-transparent border-b border-arch-700 py-3 text-white focus:outline-none focus:border-arch-accent transition-colors rounded-none placeholder-arch-600" placeholder="홍길동">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-light text-arch-300 mb-2" for="email">Email</label>
-                                <input type="email" id="email" required class="w-full bg-transparent border-b border-arch-700 py-3 text-white focus:outline-none focus:border-arch-accent transition-colors rounded-none placeholder-arch-600" placeholder="email@example.com">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-light text-arch-300 mb-2" for="service">Service of Interest</label>
-                            <select id="service" class="w-full bg-arch-900 border-b border-arch-700 py-3 text-white focus:outline-none focus:border-arch-accent transition-colors rounded-none appearance-none cursor-pointer">
-                                <option value="residential">주거 건축 (Residential)</option>
-                                <option value="commercial">상업 공간 (Commercial)</option>
-                                <option value="interior">인테리어 (Interior Design)</option>
-                                <option value="consulting">컨설팅 (Consulting)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-light text-arch-300 mb-2" for="message">Message</label>
-                            <textarea id="message" rows="4" required class="w-full bg-transparent border-b border-arch-700 py-3 text-white focus:outline-none focus:border-arch-accent transition-colors rounded-none placeholder-arch-600 resize-none" placeholder="프로젝트에 대해 간단히 설명해 주세요."></textarea>
-                        </div>
-                        <button type="submit" class="bg-white text-arch-900 px-10 py-4 font-medium tracking-widest text-sm uppercase hover:bg-arch-accent hover:text-white transition-colors duration-300 mt-4">
-                            Send Message
-                        </button>
-                    </form>
-                    
-                    <!-- Custom Message Box -->
-                    <div id="form-message" class="hidden mt-6 p-4 bg-arch-800 border-l-4 border-arch-accent text-arch-100 font-light text-sm">
-                        감사합니다. 성공적으로 메시지가 전송되었습니다. 곧 연락드리겠습니다.
-                    </div>
-                </div>
+      </div>
+    </div>
+    <div style="align-self: stretch; padding-left: 320px; padding-right: 320px; padding-top: 96px; padding-bottom: 96px; background: var(--color-white-solid, white); flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+      <div style="width: 100%; max-width: 1280px; padding-left: 32px; padding-right: 32px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 64px; display: flex">
+        <div style="align-self: stretch; justify-content: flex-start; align-items: flex-end; gap: 423.62px; display: inline-flex">
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 36px; font-family: Playfair Display; font-weight: 400; line-height: 40px; word-wrap: break-word">Selected Works</div>
             </div>
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 16px; font-family: Noto Sans KR; font-weight: 300; line-height: 24px; word-wrap: break-word">우리의 철학이 담긴 최근 주요 프로젝트들을 소개합니다.</div>
+            </div>
+          </div>
+          <div style="justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex; flex-wrap: wrap; align-content: flex-start">
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; border-radius: 9999px; outline: 1px var(--color-azure-84, #D1D5DB) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">All</div>
+            </div>
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; background: #F0BBBB; border-radius: 9999px; outline: 1px var(--color-grey-45, #737373) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Residential</div>
+            </div>
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; border-radius: 9999px; outline: 1px var(--color-azure-84, #D1D5DB) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Commercial</div>
+            </div>
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; border-radius: 9999px; outline: 1px var(--color-azure-84, #D1D5DB) solid; outline-offset: -1px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Interior</div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <footer class="bg-arch-900 text-arch-500 py-12 border-t border-arch-800">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-2xl font-serif text-white">
-                ARCHI<span class="text-arch-accent">.</span>LAB
+        <div style="align-self: stretch; height: 1232px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div style="align-self: stretch; padding-bottom: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+            <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+              <img style="align-self: stretch; height: 444px; position: relative" src="https://placehold.co/592x444" />
             </div>
-            
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-behance"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-pinterest"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+            <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+              <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">더 리버사이드 하우스</div>
+                </div>
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Residential · Gapyeong</div>
+                </div>
+              </div>
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2026</div>
             </div>
-            
-            <div class="text-sm font-light">
-                &copy; 2026 ARCHI.LAB. All rights reserved.
+          </div>
+          <div style="align-self: stretch; padding-top: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+              <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+                <img style="align-self: stretch; height: 444px; position: relative" src="https://placehold.co/592x444" />
+              </div>
+              <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+                <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">센트럴 오피스 타워</div>
+                  </div>
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Commercial · Seoul</div>
+                  </div>
+                </div>
+                <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2025</div>
+              </div>
             </div>
+          </div>
+          <div style="align-self: stretch; padding-bottom: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+            <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+              <img style="align-self: stretch; height: 444px; position: relative" src="https://placehold.co/592x444" />
+            </div>
+            <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+              <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">모던 아트 갤러리</div>
+                </div>
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Interior · Busan</div>
+                </div>
+              </div>
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2025</div>
+            </div>
+          </div>
+          <div style="align-self: stretch; padding-top: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+              <div style="align-self: stretch; background: var(--color-grey-96, #F3F4F6); overflow: hidden; border-radius: 2px; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+                <img style="align-self: stretch; height: 444px; position: relative" src="https://placehold.co/592x444" />
+              </div>
+              <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+                <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 20px; font-family: Noto Sans KR; font-weight: 500; line-height: 28px; word-wrap: break-word">포레스트 빌라</div>
+                  </div>
+                  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Residential · Jeju</div>
+                  </div>
+                </div>
+                <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-64, #A3A3A3); font-size: 12px; font-family: Playfair Display; font-style: italic; font-weight: 400; line-height: 16px; word-wrap: break-word">2024</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. Navbar Scroll Effect
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('bg-white', 'shadow-sm');
-                    header.classList.remove('py-4');
-                } else {
-                    header.classList.remove('bg-white', 'shadow-sm');
-                    header.classList.add('py-4');
-                }
-            });
-
-            // 2. Mobile Menu Toggle
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-                menu.classList.toggle('flex');
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                    menu.classList.remove('flex');
-                });
-            });
-
-            // 3. Scroll Reveal Animation using Intersection Observer
-            const revealElements = document.querySelectorAll('.reveal');
-            
-            const revealOptions = {
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
-            };
-
-            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    } else {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, revealOptions);
-
-            revealElements.forEach(el => {
-                revealOnScroll.observe(el);
-            });
-
-            // 4. Portfolio Filtering logic
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => {
-                        b.classList.remove('active', 'bg-arch-900', 'text-white', 'border-arch-900');
-                        b.classList.add('text-arch-600', 'border-gray-300');
-                    });
-                    
-                    // Add active class to clicked button
-                    btn.classList.add('active', 'bg-arch-900', 'text-white', 'border-arch-900');
-                    btn.classList.remove('text-arch-600', 'border-gray-300');
-
-                    const filterValue = btn.getAttribute('data-filter');
-
-                    portfolioItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                            // small animation reset
-                            item.style.opacity = '0';
-                            item.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                item.style.transition = 'all 0.5s ease';
-                                item.style.opacity = '1';
-                                item.style.transform = 'translateY(0)';
-                            }, 50);
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-
-        // 5. Contact Form Submit Mock (No Alert)
-        function showMessage() {
-            const msgBox = document.getElementById('form-message');
-            msgBox.classList.remove('hidden');
-            document.getElementById('contact-form').reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                msgBox.classList.add('hidden');
-            }, 5000);
-        }
-    </script>
-</body>
-</html>
+        <div style="align-self: stretch; padding-top: 16px; flex-direction: column; justify-content: flex-start; align-items: center; display: flex">
+          <div style="padding-bottom: 4px; border-bottom: 1px var(--color-grey-9, #171717) solid; justify-content: center; align-items: center; display: inline-flex">
+            <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Load More Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="align-self: stretch; padding-left: 352px; padding-right: 352px; padding-top: 96px; padding-bottom: 96px; background: var(--color-grey-98, #FBFBF9); flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+      <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 64px; display: inline-flex">
+        <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div style="align-self: stretch; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="width: 576px; height: 576px; left: 16px; top: 16px; position: absolute; border: 4px var(--color-grey-9, #171717) solid"></div>
+            <img style="align-self: stretch; height: 576px; position: relative; background: linear-gradient(0deg, var(--color-white-solid, white) 0%, var(--color-white-solid, white) 100%); border-radius: 2px" src="https://placehold.co/576x576" />
+          </div>
+        </div>
+        <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 36px; font-family: Playfair Display; font-weight: 400; line-height: 40px; word-wrap: break-word">Building the Future,<br/>Respecting the Past.</div>
+          </div>
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 18px; font-family: Noto Sans KR; font-weight: 300; line-height: 29.25px; word-wrap: break-word">ARCHI.LAB은 2015년에 설립된 건축 설계 및 인테리어 스튜디오입니다. 우<br/>리는 건축이 단순한 구조물을 넘어 사람들의 삶과 문화를 담는 그릇이라고 믿<br/>습니다.</div>
+          </div>
+          <div style="align-self: stretch; padding-bottom: 16px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 18px; font-family: Noto Sans KR; font-weight: 300; line-height: 29.25px; word-wrap: break-word">클라이언트와의 긴밀한 소통을 바탕으로, 주변 환경과 맥락을 깊이 이해하고<br/>기능적이면서도 아름다운 공간을 창조합니다. 지속 가능한 소재와 혁신적인 디<br/>자인 솔루션으로 시대를 초월하는 가치를 만들어갑니다.</div>
+          </div>
+          <div style="align-self: stretch; padding-top: 32px; border-top: 1px var(--color-grey-91, #E5E7EB) solid; justify-content: center; align-items: flex-start; gap: 32px; display: inline-flex">
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+              <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 36px; font-family: Playfair Display; font-weight: 400; line-height: 40px; word-wrap: break-word">12+</div>
+              </div>
+              <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 400; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Years Experience</div>
+              </div>
+            </div>
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+              <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 36px; font-family: Playfair Display; font-weight: 400; line-height: 40px; word-wrap: break-word">80+</div>
+              </div>
+              <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 400; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Projects Done</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="align-self: stretch; padding-left: 352px; padding-right: 352px; padding-top: 96px; padding-bottom: 96px; background: var(--color-grey-9, #171717); flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+      <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 64px; display: inline-flex">
+        <div style="width: 480px; align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-white-solid, white); font-size: 36px; font-family: Playfair Display; font-weight: 400; line-height: 40px; word-wrap: break-word">Let's talk about<br/>your next project.</div>
+          </div>
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 16px; font-family: Noto Sans KR; font-weight: 300; line-height: 26px; word-wrap: break-word">새로운 프로젝트에 대한 아이디어가 있으신가요?<br/>ARCHI.LAB과 함께 공간의 새로운 가능성을 발견해 보세요.</div>
+          </div>
+          <div style="align-self: stretch; padding-top: 24px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+            <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+              <div style="padding-top: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-orange-48, #8C7A6B); font-size: 16px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 16px; word-wrap: break-word"></div>
+              </div>
+              <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-white-solid, white); font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Studio</div>
+                </div>
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 14px; font-family: Noto Sans KR; font-weight: 300; line-height: 20px; word-wrap: break-word">경기도 성남시 분당구 </div>
+                </div>
+              </div>
+            </div>
+            <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+              <div style="padding-top: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-orange-48, #8C7A6B); font-size: 16px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 16px; word-wrap: break-word"></div>
+              </div>
+              <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-white-solid, white); font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Email</div>
+                </div>
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">2373026@ewhain.net</div>
+                </div>
+              </div>
+            </div>
+            <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+              <div style="padding-top: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-orange-48, #8C7A6B); font-size: 16px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 16px; word-wrap: break-word"></div>
+              </div>
+              <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-white-solid, white); font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Phone</div>
+                </div>
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">+82 (0)2 1234 5678</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 672px; align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+            <div style="align-self: stretch; justify-content: center; align-items: flex-start; gap: 24px; display: inline-flex">
+              <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Name</div>
+                </div>
+                <div style="align-self: stretch; padding-top: 12px; padding-bottom: 12px; overflow: hidden; border-bottom: 1px var(--color-grey-25, #404040) solid; justify-content: center; align-items: flex-start; display: inline-flex">
+                  <div style="flex: 1 1 0; padding-top: 3px; padding-bottom: 1px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 16px; font-family: Noto Sans KR; font-weight: 400; word-wrap: break-word">홍길동</div>
+                  </div>
+                </div>
+              </div>
+              <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+                <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                  <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Email</div>
+                </div>
+                <div style="align-self: stretch; padding-top: 14px; padding-bottom: 14px; overflow: hidden; border-bottom: 1px var(--color-grey-25, #404040) solid; justify-content: center; align-items: flex-start; display: inline-flex">
+                  <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">email@example.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+              <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Service of Interest</div>
+              </div>
+              <div style="align-self: stretch; padding-top: 12px; padding-bottom: 12px; background: var(--color-grey-9, #171717); border-bottom: 1px var(--color-grey-25, #404040) solid; justify-content: center; align-items: center; display: inline-flex">
+                <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                  <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-white-solid, white); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">주거 건축 (Residential)</div>
+                </div>
+              </div>
+            </div>
+            <div style="align-self: stretch; padding-bottom: 6px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+              <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-83, #D4D4D4); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">Message</div>
+              </div>
+              <div style="align-self: stretch; padding-top: 12px; padding-bottom: 84px; overflow: hidden; border-bottom: 1px var(--color-grey-25, #404040) solid; justify-content: center; align-items: flex-start; display: inline-flex">
+                <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                  <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 16px; font-family: Noto Sans KR; font-weight: 400; line-height: 24px; word-wrap: break-word">프로젝트에 대해 간단히 설명해 주세요.</div>
+                </div>
+              </div>
+            </div>
+            <div style="padding-left: 40px; padding-right: 40px; padding-top: 16px; padding-bottom: 16px; background: var(--color-white-solid, white); justify-content: center; align-items: center; display: inline-flex">
+              <div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 14px; font-family: Inter; font-weight: 500; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Send Message</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="align-self: stretch; padding-left: 320px; padding-right: 320px; padding-top: 48px; padding-bottom: 48px; background: var(--color-grey-9, #171717); border-top: 1px var(--color-grey-15, #262626) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+      <div style="width: 100%; max-width: 1280px; padding-left: 32px; padding-right: 32px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column"><span style="color: var(--color-white-solid, white); font-size: 24px; font-family: Playfair Display; font-weight: 400; line-height: 32px; word-wrap: break-word">ARCHI</span><span style="color: var(--color-orange-48, #8C7A6B); font-size: 24px; font-family: Playfair Display; font-weight: 400; line-height: 32px; word-wrap: break-word">.</span><span style="color: var(--color-white-solid, white); font-size: 24px; font-family: Playfair Display; font-weight: 400; line-height: 32px; word-wrap: break-word">LAB</span></div>
+        </div>
+        <div style="justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+          <div style="align-self: stretch; padding-top: 4px; padding-bottom: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 16px; font-family: Font Awesome 5 Brands; font-weight: 400; line-height: 16px; word-wrap: break-word"></div>
+          </div>
+          <div style="align-self: stretch; padding-top: 4px; padding-bottom: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 16px; font-family: Font Awesome 5 Brands; font-weight: 400; line-height: 16px; word-wrap: break-word"></div>
+          </div>
+          <div style="align-self: stretch; padding-top: 4px; padding-bottom: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 16px; font-family: Font Awesome 5 Brands; font-weight: 400; line-height: 16px; word-wrap: break-word"></div>
+          </div>
+          <div style="align-self: stretch; padding-top: 4px; padding-bottom: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 16px; font-family: Font Awesome 5 Brands; font-weight: 400; line-height: 16px; word-wrap: break-word"></div>
+          </div>
+        </div>
+        <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-45, #737373); font-size: 14px; font-family: Inter; font-weight: 300; line-height: 20px; word-wrap: break-word">© 2026 ARCHI.LAB. All rights reserved.</div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 1920px; padding-left: 352px; padding-right: 352px; padding-top: 16px; padding-bottom: 16px; left: 0px; top: 0px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+      <div style="align-self: stretch; height: 96px; justify-content: flex-start; align-items: center; gap: 686.30px; display: inline-flex">
+        <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-9, #171717); font-size: 24px; font-family: Playfair Display; font-weight: 600; line-height: 32px; letter-spacing: 1.20px; word-wrap: break-word">SE YOUNG.LAB</div>
+        </div>
+        <div style="justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 400; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Home</div>
+          </div>
+          <div style="align-self: stretch; padding-left: 40px; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 400; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Projects</div>
+            </div>
+          </div>
+          <div style="align-self: stretch; padding-left: 40px; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 400; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Studio</div>
+            </div>
+          </div>
+          <div style="align-self: stretch; padding-left: 40px; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+            <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="justify-content: center; display: flex; flex-direction: column; color: var(--color-grey-32, #525252); font-size: 14px; font-family: Inter; font-weight: 400; text-transform: uppercase; line-height: 20px; letter-spacing: 1.40px; word-wrap: break-word">Contact</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
